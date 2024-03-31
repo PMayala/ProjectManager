@@ -8,9 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (newTaskInput.value.trim()) {
             const newTask = document.createElement('li');
             newTask.innerHTML = `<span class="task-name">${newTaskInput.value.trim()}</span>
-            <button class="complete-btn">Completed</button>`;
-            newTask.addEventListener('click', () => {
+            <div class="task-actions">
+                <button class="complete-btn">Completed</button>
+                <button class="delete-btn">Delete</button>
+            </div>`;
+            newTask.querySelector('.complete-btn').addEventListener('click', () => {
                 newTask.querySelector('.task-name').classList.toggle('completed');
+            });
+            newTask.querySelector('.delete-btn').addEventListener('click', () => {
+                newTask.remove();
             });
             tasksList.appendChild(newTask);
             newTaskInput.value = '';

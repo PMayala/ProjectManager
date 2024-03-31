@@ -66,3 +66,11 @@ button.complete-btn {
     color: #fff;
     cursor: pointer;
 }
+.task-name {
+    flex-grow: 1;
+    word-wrap: break-word; /* Wrap long words */
+    overflow-wrap: break-word; /* Wrap long words */
+    padding-right: 10px; /* Add padding to create space for buttons */
+}
+
+
